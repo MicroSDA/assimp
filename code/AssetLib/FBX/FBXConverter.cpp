@@ -1539,9 +1539,10 @@ static void copyBoneToSkeletonBone(aiMesh *mesh, aiBone *bone, aiSkeletonBone *s
     skeletonBone->mOffsetMatrix = bone->mOffsetMatrix;
     skeletonBone->mMeshId = mesh;
 #ifndef ASSIMP_BUILD_NO_ARMATUREPOPULATE_PROCESS
-    skeletonBone->mNode = bone->mNode;
+    skeletonBone->mNode = bone->mNode; // bone->mNode Пуст !!
 #endif
     skeletonBone->mParent = -1;
+    skeletonBone->mName = bone->mName;
 }
 
 void FBXConverter::ConvertWeightsToSkeleton(aiMesh *out, const MeshGeometry &geo, const aiMatrix4x4 &absolute_transform, aiNode *parent, unsigned int materialIndex,

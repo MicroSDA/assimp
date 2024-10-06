@@ -1063,6 +1063,8 @@ struct aiSkeletonBone {
     /// @brief The number of weights
     unsigned int mNumnWeights;
 
+    C_STRUCT aiString mName;
+
     /// The mesh index, which will get influenced by the weight.
     C_STRUCT aiMesh *mMeshId;
 
